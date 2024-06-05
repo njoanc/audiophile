@@ -25,10 +25,10 @@ const MobileNav = ({ onClose }) => {
             <img
               className="w-1/2 h-auto absolute top-[20px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-              alt=""
+              alt="headphones"
             />
             <h6 className="text-mobileMenu">HEADPHONES</h6>
-            <ButtonShop onClick={handleClick} to="/headphones"></ButtonShop>
+            <ButtonShop onClick={handleClick} to="/headphones" />
           </div>
         </li>
         <li className="">
@@ -36,10 +36,10 @@ const MobileNav = ({ onClose }) => {
             <img
               className="w-1/2 h-auto absolute top-[20px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
-              alt=""
+              alt="speakers"
             />
             <h6 className="text-mobileMenu">SPEAKERS</h6>
-            <ButtonShop onClick={handleClick} to="/speakers"></ButtonShop>
+            <ButtonShop onClick={handleClick} to="/speakers" />
           </div>
         </li>
         <li className="">
@@ -47,10 +47,10 @@ const MobileNav = ({ onClose }) => {
             <img
               className="w-1/2 h-auto absolute top-[25px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
-              alt=""
+              alt="earphones"
             />
             <h6 className="text-mobileMenu">EARPHONES</h6>
-            <ButtonShop onClick={handleClick} to="/earphones"></ButtonShop>
+            <ButtonShop onClick={handleClick} to="/earphones" />
           </div>
         </li>
       </ul>
