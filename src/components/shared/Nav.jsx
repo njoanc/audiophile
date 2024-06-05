@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Cart from "./cart/Cart";
 import { motion } from "framer-motion";
+const linkClassName =
+  "hover:text-brightOrange transition-colors duration-300 uppercase";
 
 const Backdrop = ({ onClick }) => (
   <motion.div
@@ -26,35 +28,23 @@ const NavLinks = () => {
   return (
     <ul className="hidden lg:flex gap-[34px]">
       <li>
-        <Link
-          to="/"
-          className="hover:text-brightOrange transition-colors duration-300"
-        >
-          HOME
+        <Link to="/" className={linkClassName}>
+          Home
         </Link>
       </li>
       <li>
-        <Link
-          to="/headphones"
-          className="hover:text-brightOrange transition-colors duration-300"
-        >
-          HEADPHONES
+        <Link to="/headphones" className={linkClassName}>
+          Headphones
         </Link>
       </li>
       <li>
-        <Link
-          to="/speakers"
-          className="hover:text-brightOrange transition-colors duration-300"
-        >
-          SPEAKERS
+        <Link to="/speakers" className={linkClassName}>
+          Speakers
         </Link>
       </li>
       <li>
-        <Link
-          to="/earphones"
-          className="hover:text-brightOrange transition-colors duration-300"
-        >
-          EARPHONES
+        <Link to="/earphones" className={linkClassName}>
+          Earphones
         </Link>
       </li>
     </ul>

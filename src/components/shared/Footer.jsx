@@ -3,29 +3,30 @@ import { Link } from "react-router-dom";
 import ScrollToTop from "./scroll-utils/ScrollToTop";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const linkClassName = "hover:text-brightOrange transition-colors duration-300";
+const linkClassName =
+  "hover:text-brightOrange transition-colors duration-300 uppercase";
 
 const NavLinks = () => {
   return (
     <ul className="flex flex-col gap-4 md:flex-row">
       <li>
         <Link className={linkClassName} to="/" onClick={ScrollToTop}>
-          HOME
+          Home
         </Link>
       </li>
       <li>
         <Link className={linkClassName} to="/headphones" onClick={ScrollToTop}>
-          HEADPHONES
+          Headphones
         </Link>
       </li>
       <li>
         <Link className={linkClassName} to="/speakers" onClick={ScrollToTop}>
-          SPEAKERS
+          Speakers
         </Link>
       </li>
       <li>
         <Link className={linkClassName} to="/earphones" onClick={ScrollToTop}>
-          EARPHONES
+          Earphones
         </Link>
       </li>
     </ul>
