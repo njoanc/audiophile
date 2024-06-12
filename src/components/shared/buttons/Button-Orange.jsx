@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import ScrollToTop from "../scroll-utils/ScrollToTop";
 
 const ButtonOrange = ({ to, children }) => {
   return (
     <Link to={to}>
-      <motion.button
+      <button
         className="bg-brightOrange hover:bg-brightOrangeHover transition-colors duration-300 uppercase text-subtitle text-pureWhite px-[30px] py-[15px] md:max-w-[160px]"
         whileHover={{ scale: 1 }}
         whileTap={{ scale: 0.9 }}
@@ -14,7 +13,7 @@ const ButtonOrange = ({ to, children }) => {
         onClick={ScrollToTop}
       >
         {children}
-      </motion.button>
+      </button>
     </Link>
   );
 };

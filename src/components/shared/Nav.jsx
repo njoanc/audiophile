@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Cart from "./cart/Cart";
-import { motion } from "framer-motion";
 const linkClassName =
   "hover:text-brightOrange transition-colors duration-300 uppercase";
 
 const Backdrop = ({ onClick }) => (
-  <motion.div
+  <div
     className="fixed inset-0 bg-black opacity-40 z-40"
     onClick={onClick}
     initial={{ opacity: 0 }}
@@ -91,7 +90,7 @@ const Nav = ({ cartItemCount, setCartItemCount }) => {
         {isMobileMenuOpen && (
           <>
             <Backdrop onClick={toggleMobileMenu} />
-            <motion.div
+            <div
               className="fixed top-0 left-0 h-full opacity-100 w-full p-6 z-50"
               initial={{ x: "-100vw" }}
               animate={{ x: 0 }}
@@ -99,7 +98,7 @@ const Nav = ({ cartItemCount, setCartItemCount }) => {
               onClick={toggleMobileMenu}
             >
               <MobileNav />
-            </motion.div>
+            </div>
           </>
         )}
       </header>

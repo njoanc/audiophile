@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import ProductCategory from "../../shared/ProductCateogry";
+import ProductCategory from "../../shared/ProductCategory";
 import ProductShowcase from "./ProductShowcase";
 
 const Home = () => {

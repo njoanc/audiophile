@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cartSlice";
 
-const AddToCart = ({ product, setCartItems, setCartItemCount }) => {
+const AddToCart = ({ product, setCartItems, setCartItemCount, getPrice }) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
@@ -104,15 +103,12 @@ const AddToCart = ({ product, setCartItems, setCartItemCount }) => {
           +
         </button>
       </div>
-      <motion.button
+      <button
         className="bg-brightOrange hover:bg-brightOrangeHover transition-colors duration-300 uppercase text-subtitle text-pureWhite px-[30px] py-[15px] md:max-w-[160px]"
-        whileHover={{ scale: 1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.3 }}
         onClick={handleAddToCart}
       >
         Add To Cart
-      </motion.button>
+      </button>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const ProductCategoryCard = ({ imgUrl, alt, category }) => {
           alt={alt}
         />
         <h6 className="text-mobileMenu lg:text-h6">{category}</h6>
-        <ButtonShop to={`/${category.toLowerCase()}`}></ButtonShop>
+        <ButtonShop to={`/${category.toLowerCase()}`} />
       </div>
     </li>
   );

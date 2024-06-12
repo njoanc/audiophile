@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import OrderConfirmationModal from "../shared/cart/OrderConfirmationModal";
-import { motion } from "framer-motion";
 
 const Backdrop = ({ onClick }) => (
-  <motion.div
-    className="fixed inset-0 bg-black opacity-40 z-40"
+  <div
+    className="fixed inset-0 bg-black opacity-40 z-40 transition-colors duration-300"
     onClick={onClick}
     initial={{ opacity: 0 }}
     animate={{ opacity: 0.4 }}
     exit={{ opacity: 0 }}
-  />
+  ></div>
 );
 
 const Checkout = () => {
@@ -256,8 +255,8 @@ const Checkout = () => {
           </div>
           {errors.paymentMethod && <p>{errors.paymentMethod.message}</p>}
           {paymentMethod === "eMoney" && (
-            <motion.div
-              className="mt-8 flex flex-col gap-6 md:grid md:grid-cols-2"
+            <div
+              className="mt-8 flex flex-col gap-6 md:grid md:grid-cols-2 transition-colors duration-300"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -299,7 +298,7 @@ const Checkout = () => {
                   {...register("eMoneyPin", { required: true })}
                 />
               </div>
-            </motion.div>
+            </div>
           )}
           <div className="hidden lg:flex lg:items-center lg:justify-between lg:gap-8 lg:mt-[30px]">
             <img
@@ -376,7 +375,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <motion.button
+            <button
               className="bg-brightOrange hover:bg-brightOrangeHover transition-colors duration-300 uppercase text-subtitle text-pureWhite py-[15px]"
               whileHover={{ scale: 1 }}
               whileTap={{ scale: 0.9 }}
@@ -384,7 +383,7 @@ const Checkout = () => {
               onClick={handleSubmit(onSubmit)}
             >
               Continue & Pay
-            </motion.button>
+            </button>
           </div>
         </div>
       </form>

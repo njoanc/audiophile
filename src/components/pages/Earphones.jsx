@@ -2,7 +2,7 @@ import React from "react";
 import ProductTitleHeader from "../shared/ProductTitleHeader";
 import ProductPreviewCard from "../shared/ProductPreviewCard";
 import productData from "../../data/products.json";
-import ProductCategory from "../shared/ProductCateogry";
+import ProductCategory from "../shared/ProductCategory";
 
 const Earphones = () => {
   const earphones = productData.filter(
