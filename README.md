@@ -70,7 +70,7 @@ To ensure the quality and reliability of our codebase, we follow a robust testin
    ```
 
 4. **Open in Your Browser:**
-   Visit [http://localhost:5173](http://localhost:5173) to explore the Audiophile app.
+   Visit [Accoustic Aura](https://acousticaura.netlify.app/) to explore the Audiophile app.
 
 ## Contributing
 
