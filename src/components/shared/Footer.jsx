@@ -65,7 +65,7 @@ const Footer = () => {
               <li>
                 <a href="" aria-label="Facebook">
                   <FaFacebookF
-                    className="text-[white] hover:bg-brightOrange hover:text-[black] transition-colors duration-600"
+                    className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
                 </a>
@@ -73,7 +73,7 @@ const Footer = () => {
               <li>
                 <a href="" aria-label="Twitter">
                   <FaTwitter
-                    className="text-[white] hover:bg-brightOrange hover:text-[black] transition-colors duration-600"
+                    className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
                 </a>
@@ -81,14 +81,14 @@ const Footer = () => {
               <li>
                 <a href="" aria-label="Instagram">
                   <FaInstagram
-                    className="text-[white] hover:bg-brightOrange hover:text-[black] transition-colors duration-600"
+                    className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
                 </a>
               </li>
             </ul>
             <p className="text-pureWhite opacity-50 text-center">
-              Copyright 2024. All Rights Reserved
+              Copyright 2021. All Rights Reserved
             </p>
           </div>
         </div>

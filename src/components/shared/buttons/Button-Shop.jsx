@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import ScrollToTop from "../scroll-utils/ScrollToTop";
 
 const ButtonShop = (props) => {
   return (
     <Link className="text-subtitle " to={props.to} onClick={props.onClick}>
-      <motion.button
+      <button
         className="text-gray hover:text-brightOrange transition-colors duration-300"
         onClick={ScrollToTop}
         whileHover={{ scale: 1.1 }}
@@ -18,7 +17,7 @@ const ButtonShop = (props) => {
           src="/assets/shared/desktop/icon-arrow-right.svg"
           aria-label="hidden"
         />
-      </motion.button>
+      </button>
     </Link>
   );
 };

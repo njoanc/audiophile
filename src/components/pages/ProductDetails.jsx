@@ -3,16 +3,18 @@ import { useParams, useNavigate } from "react-router-dom";
 import AddToCart from "../shared/buttons/AddToCart";
 import products from "../../data/products.json";
 import RecommendProducts from "../shared/RecommendProducts";
-import ProductCategory from "../shared/ProductCateogry";
+import ProductCategory from "../shared/ProductCategory";
 import { useState } from "react";
 
 const ProductDetails = ({ setCartItemCount }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
+  const [cartItems, setCartItems] = useState([]);
 
   const product = products.find((product) => product.slug === slug);
-
-  const [cartItems, setCartItems] = useState([]);
+  // Calculate total price
+  const totalPrice = product.price * quantity;
 
   if (!product) {
     return <div>Product not found</div>;
@@ -58,7 +60,7 @@ const ProductDetails = ({ setCartItemCount }) => {
             <p className="text-body opacity-50 md:max-w-[572px]">
               {product.description}
             </p>
-            <h6 className="text-h6">${product.price}</h6>
+            <h6 className="text-h6">${totalPrice}</h6>
             <AddToCart
               product={product}
               cartItems={cartItems}
