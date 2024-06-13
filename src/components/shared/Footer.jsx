@@ -6,6 +6,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 const linkClassName =
   "hover:text-brightOrange transition-colors duration-300 uppercase";
 
+const currentYear = new Date().getFullYear();
 const NavLinks = () => {
   return (
     <ul className="flex flex-col gap-4 md:flex-row">
@@ -88,7 +89,7 @@ const Footer = () => {
               </li>
             </ul>
             <p className="text-pureWhite opacity-50 text-center">
-              Copyright 2021. All Rights Reserved
+              Copyright &#64;{currentYear}. All Rights Reserved
             </p>
           </div>
         </div>
