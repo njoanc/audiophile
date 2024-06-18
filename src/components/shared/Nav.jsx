@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Cart from "./cart/Cart";
+
 const linkClassName =
   "hover:text-brightOrange transition-colors duration-300 uppercase";
 
