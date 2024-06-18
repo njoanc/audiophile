@@ -377,8 +377,8 @@ const Checkout = () => {
 
             <button
               className="bg-brightOrange hover:bg-brightOrangeHover transition-colors duration-300 uppercase text-subtitle text-pureWhite py-[15px]"
-              whileHover={{ scale: 1 }}
-              whileTap={{ scale: 0.9 }}
+              whilehover={{ scale: 1 }}
+              whiletap={{ scale: 0.9 }}
               transition={{ duration: 0.3 }}
               onClick={handleSubmit(onSubmit)}
             >
