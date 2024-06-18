@@ -64,28 +64,28 @@ const Footer = () => {
           <div className="flex flex-col-reverse md:flex-row-reverse md:justify-between gap-12 pb-12">
             <ul className="social-links flex justify-center gap-4 items-center">
               <li>
-                <a href="" aria-label="Facebook">
+                <Link aria-label="Facebook">
                   <FaFacebookF
                     className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="" aria-label="Twitter">
+                <Link aria-label="Twitter">
                   <FaTwitter
                     className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="" aria-label="Instagram">
+                <Link aria-label="Instagram">
                   <FaInstagram
                     className="text-[white] group-hover:bg-brightOrange group-hover:text-[black] transition-colors duration-600"
                     size={24}
                   />
-                </a>
+                </Link>
               </li>
             </ul>
             <p className="text-pureWhite opacity-50 text-center">

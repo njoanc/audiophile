@@ -8,8 +8,8 @@ const ButtonShop = (props) => {
       <button
         className="text-gray hover:text-brightOrange transition-colors duration-300"
         onClick={ScrollToTop}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        whilehover={{ scale: 1.1 }}
+        whiletap={{ scale: 0.9 }}
       >
         SHOP{" "}
         <img

@@ -11,6 +11,7 @@ import Speakers from "./components/pages/Speakers";
 import Earphones from "./components/pages/Earphones";
 import ProductDetails from "./components/pages/ProductDetails";
 import Checkout from "./components/pages/Checkout";
+import NotFound from "./components/pages/NotFound";
 
 const App = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
@@ -31,6 +32,7 @@ const App = () => {
         />
 
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {!hideAbout && <About />}
       <Footer />
