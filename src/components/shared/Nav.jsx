@@ -1,78 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Cart from "./cart/Cart";
-
-const linkClassName =
-  "hover:text-brightOrange transition-colors duration-300 uppercase";
-
-const Backdrop = ({ onClick }) => (
-  <div
-    className="fixed inset-0 bg-black opacity-40 z-40"
-    onClick={onClick}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 0.4 }}
-    exit={{ opacity: 0 }}
-  />
-);
-
-const MobileMenuButton = ({ onClick }) => {
-  return (
-    <button className="lg:hidden" onClick={onClick}>
-      <img src="/assets/shared/mobile/hamburger.svg" alt="menu" />
-    </button>
-  );
-};
-
-const NavLinks = () => {
-  return (
-    <ul className="hidden lg:flex gap-[34px]">
-      <li>
-        <Link to="/" className={linkClassName}>
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/headphones" className={linkClassName}>
-          Headphones
-        </Link>
-      </li>
-      <li>
-        <Link to="/speakers" className={linkClassName}>
-          Speakers
-        </Link>
-      </li>
-      <li>
-        <Link to="/earphones" className={linkClassName}>
-          Earphones
-        </Link>
-      </li>
-    </ul>
-  );
-};
+import Backdrop from "./Backdrop";
+import MobileMenuButton from "./MobileMenuButton";
+import NavLinks from "./NavLinks";
 
 const Nav = ({ cartItemCount, setCartItemCount }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const navigate = useNavigate();
 
-  function toggleMobileMenu() {
+  const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setShowMobileNav(false);
-  }
+  };
 
-  function toggleCart() {
+  const toggleCart = () => {
     setCartOpen(!cartOpen);
-  }
+  };
 
   return (
     <div>
       <header className="bg-pureBlack sticky top-0 z-50 md:px-4">
         <nav className="mx-auto text-pureWhite text-subtitle flex justify-between py-8 max-w-[310px] md:max-w-[689px] lg:max-w-[1109px] border-b border-b-white border-opacity-20">
           <MobileMenuButton onClick={toggleMobileMenu} />
-          <Link to="/">
-            <img src="/assets/shared/desktop/logo.svg" alt="audiophile-logo" />
-          </Link>
+
+          <img
+            src="/assets/shared/desktop/logo.svg"
+            alt="audiophile-logo"
+            onClick={() => navigate("/")}
+          />
+
           <NavLinks />
           <div className="relative">
             <button id="shopping-cart" onClick={toggleCart}>
@@ -117,4 +77,3 @@ const Nav = ({ cartItemCount, setCartItemCount }) => {
 };
 
 export default Nav;
-export { NavLinks };

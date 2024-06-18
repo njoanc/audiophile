@@ -94,34 +94,34 @@ const ProductDetails = ({ setCartItemCount }) => {
               <img
                 className="rounded-lg md:hidden"
                 src={`/${product.gallery.first.mobile}`}
-                alt=""
+                alt="mobile"
               />
               <img
                 className="rounded-lg hidden md:block lg:hidden"
                 src={`/${product.gallery.first.tablet}`}
-                alt=""
+                alt="tablet"
               />
               <img
                 className="rounded-lg hidden lg:block"
                 src={`/${product.gallery.first.desktop}`}
-                alt=""
+                alt="desktop"
               />
             </div>
             <div className="img2">
               <img
                 className="rounded-lg md:hidden"
                 src={`/${product.gallery.second.mobile}`}
-                alt=""
+                alt="mobile"
               />
               <img
                 className="rounded-lg hidden md:block lg:hidden"
                 src={`/${product.gallery.second.tablet}`}
-                alt=""
+                alt="tablet"
               />
               <img
                 className="rounded-lg hidden lg:block"
                 src={`/${product.gallery.second.desktop}`}
-                alt=""
+                alt="desktop"
               />
             </div>
           </div>
@@ -129,17 +129,17 @@ const ProductDetails = ({ setCartItemCount }) => {
             <img
               className="rounded-lg md:hidden"
               src={`/${product.gallery.third.mobile}`}
-              alt=""
+              alt="mobile"
             />
             <img
               className="rounded-lg hidden md:block lg:hidden"
               src={`/${product.gallery.third.tablet}`}
-              alt=""
+              alt="tablet"
             />
             <img
               className="rounded-lg hidden lg:block"
               src={`/${product.gallery.third.desktop}`}
-              alt=""
+              alt="desktop"
             />
           </div>
         </div>
