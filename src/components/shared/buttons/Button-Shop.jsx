@@ -1,24 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScrollToTop from "../scroll-utils/ScrollToTop";
 
-const ButtonShop = (props) => {
+const ButtonShop = ({ to, onClick, children }) => {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    ScrollToTop();
+    navigate(to);
+  };
   return (
-    <Link className="text-subtitle " to={props.to} onClick={props.onClick}>
-      <button
-        className="text-gray hover:text-brightOrange transition-colors duration-300"
-        onClick={ScrollToTop}
-        whilehover={{ scale: 1.1 }}
-        whiletap={{ scale: 0.9 }}
-      >
-        SHOP{" "}
-        <img
-          className="inline-block align-middle -mt-1"
-          src="/assets/shared/desktop/icon-arrow-right.svg"
-          aria-label="hidden"
-        />
-      </button>
-    </Link>
+    <button
+      className="text-gray hover:text-brightOrange transition-colors duration-300"
+      onClick={handleOnClick}
+      whilehover={{ scale: 1.1 }}
+      whiletap={{ scale: 0.9 }}
+    >
+      {children || (
+        <>
+          SHOP{" "}
+          <img
+            className="inline-block align-middle -mt-1"
+            src="/assets/shared/desktop/icon-arrow-right.svg"
+            aria-label="hidden"
+          />
+        </>
+      )}
+    </button>
   );
 };
 

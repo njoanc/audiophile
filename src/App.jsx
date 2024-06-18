@@ -16,7 +16,6 @@ import Layout from "./components/shared/Layout";
 
 const App = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
-  const location = useLocation();
 
   return (
     <div className="App">

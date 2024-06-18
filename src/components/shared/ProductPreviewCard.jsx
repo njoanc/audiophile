@@ -1,6 +1,5 @@
 import React from "react";
 import ButtonOrange from "./buttons/Button-Orange";
-import { Link } from "react-router-dom";
 
 const ProductPreviewCard = ({
   slug,

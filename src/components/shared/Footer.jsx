@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScrollToTop from "./scroll-utils/ScrollToTop";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
@@ -8,39 +8,50 @@ const linkClassName =
 
 const currentYear = new Date().getFullYear();
 const NavLinks = () => {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    ScrollToTop();
+    navigate("/");
+  };
   return (
     <ul className="flex flex-col gap-4 md:flex-row">
-      <li>
-        <Link className={linkClassName} to="/" onClick={ScrollToTop}>
-          Home
-        </Link>
+      <li className={linkClassName} onClick={handleOnClick}>
+        Home
       </li>
-      <li>
-        <Link className={linkClassName} to="/headphones" onClick={ScrollToTop}>
-          Headphones
-        </Link>
+      <li className={linkClassName} onClick={handleOnClick}>
+        Headphones
       </li>
-      <li>
-        <Link className={linkClassName} to="/speakers" onClick={ScrollToTop}>
-          Speakers
-        </Link>
+      <li className={linkClassName} onClick={handleOnClick}>
+        Speakers
       </li>
-      <li>
-        <Link className={linkClassName} to="/earphones" onClick={ScrollToTop}>
-          Earphones
-        </Link>
+      <li className={linkClassName} onClick={handleOnClick}>
+        Speakers
+      </li>
+      <li className={linkClassName} onClick={handleOnClick}>
+        Earphones
       </li>
     </ul>
   );
 };
 
 const Nav = () => {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    ScrollToTop();
+    navigate("/");
+  };
   return (
     <header className="bg-pureBlack">
       <nav className="mx-auto text-pureWhite text-subtitle flex flex-col lg:flex-row justify-between items-center md:items-start gap-12 text-center py-8 max-w-[310px] md:max-w-[689px] lg:max-w-[1109px]">
-        <Link className="mx-auto md:mx-0" onClick={ScrollToTop} to="/">
-          <img src="/assets/shared/desktop/logo.svg" alt="audiophile-logo" />
-        </Link>
+        <img
+          src="/assets/shared/desktop/logo.svg"
+          alt="audiophile-logo"
+          onClick={handleOnClick}
+          className="mx-auto md:mx-0"
+        />
+
         <NavLinks />
       </nav>
     </header>

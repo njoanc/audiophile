@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const OrderConfirmationModal = ({ cartItems }) => {
   const totalAmount = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -7,6 +7,7 @@ const OrderConfirmationModal = ({ cartItems }) => {
   );
 
   const firstCartItem = cartItems[0];
+  const navigate = useNavigate();
 
   return (
     <div className="modal-container">
@@ -64,8 +65,9 @@ const OrderConfirmationModal = ({ cartItems }) => {
           whilehover={{ scale: 1 }}
           whiletap={{ scale: 0.9 }}
           transition={{ duration: 0.3 }}
+          onClick={() => navigate("/")}
         >
-          <Link to="/">Back To Home</Link>
+          Back To Home
         </button>
       </div>
     </div>
