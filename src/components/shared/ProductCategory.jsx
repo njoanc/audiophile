@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import ButtonShop from "/src/components/shared/buttons/Button-Shop.jsx";
 import products from "/src/data/products.json";
 

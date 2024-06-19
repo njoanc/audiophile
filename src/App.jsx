@@ -1,47 +1,54 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Nav from "./components/shared/Nav";
-import Home from "./components/pages/home/Home";
-import About from "./components/shared/About";
-import Footer from "./components/shared/Footer";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { appRoutes } from "./routes/routes";
 
-// pages
-import Headphones from "./components/pages/Headphones";
-import Speakers from "./components/pages/Speakers";
-import Earphones from "./components/pages/Earphones";
-import ProductDetails from "./components/pages/ProductDetails";
-import Checkout from "./components/pages/Checkout";
-import NotFound from "./components/pages/NotFound";
-import Layout from "./components/shared/Layout";
+const Nav = lazy(() => import("./components/shared/Nav"));
+const Layout = lazy(() => import("./components/shared/Layout"));
 
 const App = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
+  const location = useLocation();
 
   return (
-    <div className="App">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout
-              cartItemCount={cartItemCount}
-              setCartItemCount={setCartItemCount}
-            />
-          }
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Nav
+          cartItemCount={cartItemCount}
+          setCartItemCount={setCartItemCount}
+        />
+      </Suspense>
+      <SwitchTransition>
+        <CSSTransition
+          key={location.pathname}
+          classNames="fade"
+          timeout={10}
+          unmountOnExit
         >
-          <Route path="/" element={<Home />} />
-          <Route path="/headphones" element={<Headphones />} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/earphones" element={<Earphones />} />
-          <Route
-            path="/products/:slug"
-            element={<ProductDetails setCartItemCount={setCartItemCount} />}
-          />
-
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes location={location}>
+              {appRoutes.map((route) => {
+                const Component = route.component;
+                return (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    element={
+                      <Component
+                        cartItemCount={cartItemCount}
+                        setCartItemCount={setCartItemCount}
+                      />
+                    }
+                  />
+                );
+              })}
+            </Routes>
+          </Suspense>
+        </CSSTransition>
+      </SwitchTransition>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Layout />
+      </Suspense>
     </div>
   );
 };

@@ -4,13 +4,12 @@ import Nav from "./Nav";
 import About from "./About";
 import Footer from "./Footer";
 
-const Layout = ({ cartItemCount, setCartItemCount }) => {
+const Layout = () => {
   const location = useLocation();
   const hideAbout = location.pathname === "/checkout";
 
   return (
     <div>
-      <Nav cartItemCount={cartItemCount} setCartItemCount={setCartItemCount} />
       <Outlet />
       {!hideAbout && <About />}
       <Footer />
