@@ -87,7 +87,7 @@
     transform: scale(1);
   }
 
-  input[type='radio']:checked + label {
+  input[type='radio']:checked+label {
     border-color: #d87d4a;
   }
 
@@ -185,4 +185,26 @@
     width: 400px;
     max-width: 90%;
   }
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
 }
