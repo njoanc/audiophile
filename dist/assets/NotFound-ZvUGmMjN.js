@@ -1,0 +1,1 @@
+import{u as e,j as o}from"./index-CUqJ_sM4.js";const s=()=>{const t=e();return o.jsxs("div",{children:[o.jsx("h1",{children:"Page Not Found"}),o.jsx("button",{onClick:()=>t("/"),children:"Go back to Home page"})]})};export{s as default};
